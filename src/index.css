@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@500;900&family=Raleway:wght@500;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: red;
+}
+
+.folders-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: -5px;
+  text-align: center;
+  font-family: 'MuseoModerno', cursive;
+  color: darkblue;
+}
+
+.notes-container {
+  flex: 2;
+  margin-left: 10px;
+}
+
+.note-name, .folder {
+  font-family: 'MuseoModerno', cursive;
+  font-weight: 900;
+}
+
+.note-content {
+  background-color: cornflowerblue;
+  border: gold solid 5px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px; 
+}
+
+.note {
+  background-color: cornflowerblue;
+  color: darkblue;
+  border: gold solid 5px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  padding: 5px 0 5px 20px;
+}
+
+.note > button {
+  padding: 5px;
+}
+
+.highlighted-folder {
+  background-color: crimson;
+  color: yellow;
+  border: yellow dashed 5px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  padding: 15px;
+}
+
+.folder-container {
+  background-color: cornflowerblue;
+  border: gold solid 5px;
+  border-radius: 10px;
+  margin: 5px;
+  text-align: center;
+  padding: 15px;
+}
+
+header {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: yellow;
+  font-family: 'MuseoModerno', cursive;
+}
+
+h1 {
+  margin: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding: 10px;
+  background-color: coral;
+  border: yellow solid 5px;
+  border-radius: 10px;
+}
+
+form {
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  border: gold solid 5px;
+  font-family: 'MuseoModerno', cursive;
+  font-weight: 900;
+  color: darkblue;
+}
+
+fieldset {
+  border-style: none;
+}
+
+button {
+  background-color: gold;
+  margin: 10px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}

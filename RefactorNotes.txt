@@ -1,0 +1,5 @@
+Note to self:
+Use this file as temp placeholder for working out any logic, 
+code snippets, or other notes as needed to aid yourself 
+in the creation of the app, then delete text when ready 
+to implement into the final working code.

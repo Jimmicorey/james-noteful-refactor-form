@@ -33,7 +33,7 @@ class AddNote extends React.Component {
             if (currentFolder) {
                 currentFolderId=folders.find((folder) => folder.id === currentFolder).id
                 if (folder.id === currentFolderId) {
-                    option=<option selected='selected' key={i} value={folder.id}>{folder.name}</option>
+                    option=<option key={i} value={folder.id}>{folder.name}</option>
                 } else {
                     option=<option key={i} value={folder.id}>{folder.name}</option>
                 }

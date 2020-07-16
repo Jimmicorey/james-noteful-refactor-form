@@ -181,7 +181,7 @@ class App extends React.Component{
       newFolders.push(result)
       this.setState({
         folders: newFolders,
-        folderField: {value: '', touched: false} 
+        folderField: {value: '', touched: false} //<--- touched???
       })
     })  
     this.props.history.goBack();

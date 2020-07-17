@@ -7,18 +7,36 @@ class Note extends React.Component {
 
 
     render() {
-        const {currentNote,handleDeleteClick,loading}=this.context
+        const {
+            currentNote,
+            handleDeleteClick,
+            //loading
+        } = this.context
 
         if (currentNote === this.props.note.id) {    
             return(
                 <>
-                    <div onClick={(e)=>this.props.handleNoteSelect(e)} id={this.props.note.id} className='note'>
+                    <div 
+                        onClick={(e)=>this.props.handleNoteSelect(e)} 
+                        id={this.props.note.id} 
+                        className='note'
+                    >
                         <div className='note-name'>
                             {this.props.note.name}
                         </div>
+
                         {this.props.note.modified}
-                        <button disabled={loading} id={this.props.note.id} onClick={(e)=>handleDeleteClick(e)} type='button'>DELETE</button>
-                    </div>      
+
+                        <button 
+                            //disabled={loading} 
+                            id={this.props.note.id} 
+                            onClick={(e)=>handleDeleteClick(e)} 
+                            type='button'
+                        >
+                            DELETE
+                        </button>
+                    </div> 
+
                     <div className='note-content'>
                         {this.props.note.content}
                     </div>
@@ -26,12 +44,26 @@ class Note extends React.Component {
             )
         } else {
             return (
-                <div onClick={(e)=>this.props.handleNoteSelect(e)} id={this.props.note.id} className='note'>
+                <div 
+                    onClick={(e)=>this.props.handleNoteSelect(e)} 
+                    id={this.props.note.id} 
+                    className='note'
+                >
+
                     <div className='note-name'>
                         {this.props.note.name}
                     </div>
+
                     {this.props.note.modified}
-                    <button disabled={loading} id={this.props.note.id} onClick={(e)=>handleDeleteClick(e)} type='button'>DELETE</button>
+
+                    <button 
+                        //disabled={loading} 
+                        id={this.props.note.id} 
+                        onClick={(e)=>handleDeleteClick(e)} 
+                        type='button'
+                    >
+                        DELETE
+                    </button>
                 </div>
             )
         }

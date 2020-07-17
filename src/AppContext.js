@@ -11,7 +11,7 @@ const AppContext = React.createContext({
     handleAddNote: () => {},
     handleAddNoteSubmit: () => {},
     handleUpdateNoteFields: () => {},
-    noteFields: {},
+    noteFields: {}, ///////////////////////////////////////
     handleFolderSubmit:() => {},
     handleFolderFormOnChange:() => {},
     folderField: {},

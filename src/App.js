@@ -17,19 +17,19 @@ class App extends React.Component{
     noteFields: {
       name: {
         value: '',
-        touched: false,
+        //touched: false,
       },
       content: {
         value: '',
-        touched: false,
+        //touched: false,
       },
       folderName: {
         value: '',
-        touched: false,
+        //touched: false,
       }
     },
     folderField: {value: '', touched: false},
-    loading: false
+    //loading: false
   }
 
   //When App mounts FETCH folders & notes database, assign them to state

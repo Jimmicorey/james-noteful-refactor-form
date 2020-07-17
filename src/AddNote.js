@@ -7,10 +7,19 @@ class AddNote extends React.Component {
     static contextType = AppContext;
 
     render () {
-        const {handleAddNoteSubmit, handleUpdateNoteFields, noteFields, folders, currentFolder, loading} = this.context;
+        const {
+            handleAddNoteSubmit, 
+            handleUpdateNoteFields, 
+            noteFields, 
+            folders, 
+            currentFolder, 
+            loading
+        } = this.context;
+
         let validation = [];
         
-        
+        ////////////////////////////////////////////////////
+        ////////////////////////////////////////////////////
         if (noteFields.name.value.length === 0 && noteFields.name.touched === true) {
             validation.push('Your Note Needs A Name');
         }
@@ -26,6 +35,8 @@ class AddNote extends React.Component {
                 </li>
             )
         })
+        //////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////
 
         let options=folders.map((folder,i) => {
             let option
@@ -50,27 +61,54 @@ class AddNote extends React.Component {
         if (validation.length !== 0 || noteFields.name.touched === false || loading === true) {
             disabled = true
         }
+        /////////////////////////////////////////////////////////
         
         return (
             <div>
                 <form onSubmit={e=>handleAddNoteSubmit(e)}>
                     <legend></legend>
+
                     <fieldset>
                         <div>
-                            <label htmlFor='name'>What's it called:  </label>
-                            <input name='name' id='name' onChange={e=>handleUpdateNoteFields(e)}></input>
+                            <label htmlFor='name'>
+                                What's it called:  
+                            </label>
+
+                            <input 
+                                name='name' 
+                                id='name' 
+                                onChange={e=>handleUpdateNoteFields(e)}
+                                required
+                            >
+                            </input>
                         </div>
+
                         <div>
                             <label>What's in it:  </label>
-                            <input id='content' onChange={e=>handleUpdateNoteFields(e)}></input>
+                            <input 
+                                id='content' 
+                                onChange={e=>handleUpdateNoteFields(e)}
+                                required
+                            >
+                            </input>
                         </div>
+
                         <div>
                             <label>Where's it go:  </label>
-                            <select id='folderName' onChange={e=>handleUpdateNoteFields(e)}>
+                            <select 
+                                id='folderName' 
+                                onChange={e=>handleUpdateNoteFields(e)}
+                            >
                                 {options}
                             </select>
                         </div>
-                        <button type='submit' disabled={disabled}>SAVE</button>
+
+                        <button 
+                            type='submit' 
+                            disabled={disabled}
+                        >
+                            SAVE
+                        </button>
                     </fieldset>
                 </form>
 

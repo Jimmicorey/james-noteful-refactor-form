@@ -7,3 +7,13 @@ to implement into the final working code.
 
 what was the purpose of the "touched" property??? it was causing an error in "AddNote"
 is it needed elsewhere????
+-----------------------------------------------
+
+
+There is no validation for the content input of a new note.
+
+
+
+The code needs to include error handling, 
+fetch statements should include catch and display errors 
+to the user using alert or other non-console method.

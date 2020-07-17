@@ -7,7 +7,12 @@ class Notes extends React.Component{
     static contextType=AppContext;
 
     render(){
-        const {notes,currentFolder,currentNote,handleAddNote} = this.context;
+        const {
+            notes,
+            currentFolder,
+            currentNote,
+            handleAddNote
+        } = this.context;
 
         let renderNotes=notes;
 
@@ -20,14 +25,23 @@ class Notes extends React.Component{
         }
 
         const note= renderNotes.map((note) => {
-            return <Note currentNote={currentNote} handleNoteSelect={this.props.handleNoteSelect} key={note.id} note={note}/>
+            return <Note 
+                currentNote={currentNote} 
+                handleNoteSelect={this.props.handleNoteSelect} 
+                key={note.id} 
+                note={note}/>
         })
 
 
         return (
             <div className='notes-container'>
                 {note}
-                <button onClick={(e)=>handleAddNote(e)} type='button'>Add Note</button>
+                <button 
+                    onClick={(e)=>handleAddNote(e)} 
+                    type='button'
+                >
+                    Add Note
+                </button>
             </div>
         )
     }

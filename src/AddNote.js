@@ -10,16 +10,17 @@ class AddNote extends React.Component {
         const {
             handleAddNoteSubmit, 
             handleUpdateNoteFields, 
-            noteFields, 
+            //noteFields, 
             folders, 
             currentFolder, 
-            loading
+            //loading
         } = this.context;
 
         let validation = [];
         
         ////////////////////////////////////////////////////
         ////////////////////////////////////////////////////
+        /*
         if (noteFields.name.value.length === 0 && noteFields.name.touched === true) {
             validation.push('Your Note Needs A Name');
         }
@@ -35,6 +36,7 @@ class AddNote extends React.Component {
                 </li>
             )
         })
+        */
         //////////////////////////////////////////////////////
         //////////////////////////////////////////////////////
 
@@ -56,11 +58,12 @@ class AddNote extends React.Component {
                 option                
             )
         })
-
+        /*
         let disabled = false;
         if (validation.length !== 0 || noteFields.name.touched === false || loading === true) {
             disabled = true
         }
+        */
         /////////////////////////////////////////////////////////
         
         return (
@@ -105,7 +108,7 @@ class AddNote extends React.Component {
 
                         <button 
                             type='submit' 
-                            disabled={disabled}
+                            //disabled={disabled}
                         >
                             SAVE
                         </button>

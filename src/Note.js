@@ -9,8 +9,7 @@ class Note extends React.Component {
     render() {
         const {
             currentNote,
-            handleDeleteClick,
-            //loading
+            handleDeleteClick
         } = this.context
 
         if (currentNote === this.props.note.id) {    
@@ -28,7 +27,6 @@ class Note extends React.Component {
                         {this.props.note.modified}
 
                         <button 
-                            //disabled={loading} 
                             id={this.props.note.id} 
                             onClick={(e)=>handleDeleteClick(e)} 
                             type='button'
@@ -56,8 +54,7 @@ class Note extends React.Component {
 
                     {this.props.note.modified}
 
-                    <button 
-                        //disabled={loading} 
+                    <button  
                         id={this.props.note.id} 
                         onClick={(e)=>handleDeleteClick(e)} 
                         type='button'

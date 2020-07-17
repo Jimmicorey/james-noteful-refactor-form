@@ -10,26 +10,10 @@ class AddFolder extends React.Component {
         const {
             handleFolderSubmit, 
             handleFolderFormOnChange, 
-            //folderField 
         } = this.context
 
         let validation = '';
-        //////////////////////////////////////////////////////////////////////////////////
-        /*
-        //if (folderField.value.length === 0 && folderField.touched === true) {
-        if (folderField.value.length === 0) {
-            validation = 'Your Folder Needs A Name';
-        }
-        */
 
-        /*
-        let disabled = false
-        //if (validation.length !== 0 || folderField.touched === false) {
-        if (validation.length !== 0) {
-            disabled = true;
-        }
-        */
-        //////////////////////////////////////////////////////////////////////////////////
         return (
             <div>
                 <form onSubmit={e=>handleFolderSubmit(e)}>
@@ -50,7 +34,6 @@ class AddFolder extends React.Component {
 
                         <button 
                             type='submit' 
-                            //disabled={disabled}
                         >
                             SUBMIT
                         </button>

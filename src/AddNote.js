@@ -10,35 +10,11 @@ class AddNote extends React.Component {
         const {
             handleAddNoteSubmit, 
             handleUpdateNoteFields, 
-            //noteFields, 
             folders, 
             currentFolder, 
-            //loading
         } = this.context;
 
         let validation = [];
-        
-        ////////////////////////////////////////////////////
-        ////////////////////////////////////////////////////
-        /*
-        if (noteFields.name.value.length === 0 && noteFields.name.touched === true) {
-            validation.push('Your Note Needs A Name');
-        }
-
-        if (noteFields.folderName.touched === true && folders.find(folder => folder.id === noteFields.folderName.value) === undefined){
-            validation.push('Please Choose Another Folder');
-        }
-
-        validation = validation.map((requirement, index)=>{
-            return(
-                <li key = 'index'>
-                    {requirement}
-                </li>
-            )
-        })
-        */
-        //////////////////////////////////////////////////////
-        //////////////////////////////////////////////////////
 
         let options=folders.map((folder,i) => {
             let option
@@ -58,13 +34,6 @@ class AddNote extends React.Component {
                 option                
             )
         })
-        /*
-        let disabled = false;
-        if (validation.length !== 0 || noteFields.name.touched === false || loading === true) {
-            disabled = true
-        }
-        */
-        /////////////////////////////////////////////////////////
         
         return (
             <div>
@@ -108,7 +77,6 @@ class AddNote extends React.Component {
 
                         <button 
                             type='submit' 
-                            //disabled={disabled}
                         >
                             SAVE
                         </button>

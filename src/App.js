@@ -16,25 +16,21 @@ class App extends React.Component{
     notes: [],
     noteFields: {
       name: {
-        value: '',
-        //touched: false,
+        value: ''
       },
       content: {
-        value: '',
-        //touched: false,
+        value: ''
       },
       folderName: {
-        value: '',
-        //touched: false,
+        value: ''
       }
     },
-    folderField: {value: '',} //touched: false},
-    //loading: false
+    folderField: {value: ''}
+
   }
 
   //When App mounts FETCH folders & notes database, assign them to state
   componentDidMount() {
-    //this.setState( {loading: true} )
     fetch(`http://localhost:9090/db`)
     .then(response => response.json())
     .then(data => {
@@ -42,7 +38,6 @@ class App extends React.Component{
         ...data,
         currentFolder: null,
         currentNote: null,
-        //loading: false
       })
     })
   }
@@ -79,7 +74,6 @@ class App extends React.Component{
     e.stopPropagation();
     const noteId = e.target.id;
     this.setState({
-      //loading:true
     })
     fetch(`http://localhost:9090/notes/${e.target.id}`, {
       method: 'DELETE',
@@ -94,7 +88,6 @@ class App extends React.Component{
       this.setState({
         notes: newNotes,
         currentNote:null,
-        //loading:false
       }, () => this.props.history.goBack() )
     })
   }
@@ -123,8 +116,6 @@ class App extends React.Component{
       modified: date.toISOString()
     };
 
-    //this.setState( {loading: true} )
-
     fetch('http://localhost:9090/notes',{
       method:'POST',
       headers: {'Content-Type': 'application/json'},
@@ -136,19 +127,15 @@ class App extends React.Component{
         newNotes.push(result);
         this.setState({
           notes: newNotes,
-          //loading: false,
           noteFields: {
             name: {
-              value: '',
-              //touched: false,
+              value: ''
             },
             content: {
-              value: '',
-              //touched: false,
+              value: ''
             },
             folderName: {
-              value: '',
-              //touched: false,
+              value: ''
             }
           }
         })
@@ -162,7 +149,6 @@ class App extends React.Component{
   handleUpdateNoteFields = (e) => {
     let newNoteFields = this.state.noteFields
     newNoteFields[e.target.id].value = e.target.value;
-    //newNoteFields[e.target.id].touched = true;
     this.setState( {noteFields: newNoteFields} );     
   }
 
@@ -181,7 +167,7 @@ class App extends React.Component{
       newFolders.push(result)
       this.setState({
         folders: newFolders,
-        folderField: {value: ''} //touched: false}
+        folderField: {value: ''}
       })
     })  
     this.props.history.goBack();
@@ -192,7 +178,6 @@ class App extends React.Component{
   handleFolderFormOnChange = (e) => {
     let newFolderField = this.state.folderField;
     newFolderField.value = e.target.value;
-    //newFolderField.touched = true;
     this.setState({folderField: newFolderField});
   }
 
@@ -213,7 +198,6 @@ class App extends React.Component{
         handleFolderSubmit:this.handleFolderSubmit,
         handleFolderFormOnChange:this.handleFolderFormOnChange,
         folderField: this.state.folderField,
-        //loading:this.state.loading
       }}>
 
         <div className = 'App'>
